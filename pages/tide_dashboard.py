@@ -13,7 +13,7 @@ import plotly.graph_objs as go
 # Register this file as a Dash page
 dash.register_page(__name__, path="/tide_dashboard", name="IOC Tide Dashboard")
 
-API_KEY = os.getenv("IOC_API_KEY", "your_default_key_here")
+API_KEY = os.getenv("IOC_API_KEY", "354a1bc9fc147727d6eaf353d03b8aab9ec085ef87b823299ea65ab117a201ffc6c79ca7a8b87a76ba7452408fe20a2d48d4fb4481a9eb47c30f5cf5eb35472b")
 
 # --- Fetch IOC Stations ---
 def get_stations():
@@ -142,3 +142,4 @@ def update_papua(_):
     if papua_df.empty:
         return {"data":[],"layout":{"title":"No Papua stations"}}
     return build_subplot(papua_df, "Papua Sea Level", cols=3, rows=2)
+
